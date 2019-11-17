@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String URL_DATA = "https://www.ttnsw.com.au/home/files/2014/8375293875293jkwhjkfhyhh/country.json";
     public ArrayList<Country> countryList;
     private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +48,13 @@ public class MainActivity extends AppCompatActivity {
         loadRecyclerViewData();
 
         recyclerView = findViewById(R.id.rv_learn);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
         LearnAdapter countryAdapter = new LearnAdapter();
         countryAdapter.setData(countryList);
         recyclerView.setAdapter(countryAdapter);
+
 
         HomeFragment fragment = new HomeFragment();
         final FragmentManager fragmentManager = getSupportFragmentManager();
