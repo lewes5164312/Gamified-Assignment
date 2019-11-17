@@ -17,13 +17,6 @@ import java.util.List;
 public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ItemViewHolder> {
     private ArrayList<Country> countriesToAdapt;
 
-    private List<Country> countryList;
-    private Context context;
-
-    public LearnAdapter(List<Country> countryList, Context context){
-        this.countryList = countryList;
-        this.context = context;
-    }
     public void setData(ArrayList<Country> countriesToAdapt) {
         this.countriesToAdapt = countriesToAdapt;
     }
