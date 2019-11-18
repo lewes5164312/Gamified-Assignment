@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,24 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final String URL_DATA = "https://www.ttnsw.com.au/home/files/2014/8375293875293jkwhjkfhyhh/country.json";
-    public ArrayList<Country> countryList;
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
+    public static ArrayList<Country> countryList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        loadRecyclerViewData();
-
-        recyclerView = findViewById(R.id.rv_learn);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-
-        LearnAdapter countryAdapter = new LearnAdapter();
-        countryAdapter.setData(countryList);
-        recyclerView.setAdapter(countryAdapter);
+       loadRecyclerViewData();
 
 
         HomeFragment fragment = new HomeFragment();
@@ -61,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frag_slot, fragment);
         fragmentTransaction.commit();
+
 
         BottomNavigationView navMenu = findViewById(R.id.bottomNavBar);
 
@@ -83,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
 
 
     }
@@ -115,16 +107,16 @@ public class MainActivity extends AppCompatActivity {
                                 JSONObject o = array.getJSONObject(i);
 
                                 Country country = new Country(
-                                        o.getString("name"),
-                                        o.getString("area"),
+                                        o.getString("name")
+                                     /*   o.getString("area"),
                                         o.getString("pop"),
                                         o.getString("gdp"),
                                         o.getString("capital"),
-                                        o.getString("primary_language"),
-                                        o.getString("flag_url")
+                                        o.getString("flag_url") */
                                         // add to a list
                                 );
                                 countryList.add(country);
+                                System.out.println("added");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -142,5 +134,6 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
+
 
 }

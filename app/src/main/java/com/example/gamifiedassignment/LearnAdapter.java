@@ -18,7 +18,8 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ItemViewHold
     private ArrayList<Country> countriesToAdapt;
 
     public void setData(ArrayList<Country> countriesToAdapt) {
-        this.countriesToAdapt = countriesToAdapt;
+       this.countriesToAdapt = countriesToAdapt;
+
     }
 
     @NonNull
@@ -35,7 +36,7 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ItemViewHold
 
     //passes country and navigates detail activity
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         final Country countryAtPosition = countriesToAdapt.get(position);
 
         holder.nameTV.setText(countryAtPosition.getName());

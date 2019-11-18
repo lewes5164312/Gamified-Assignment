@@ -7,6 +7,8 @@ private String area;
 private String pop;
 private String gdp;
 private String capital;
+    private String primary_language;
+    private String flag_url;
 
     public String getName() {
         return name;
@@ -36,20 +38,28 @@ private String capital;
         return flag_url;
     }
 
-    private String primary_language;
-private String flag_url;
 
-public Country (String name, String area, String pop, String gdp, String capital, String primary_language,
+
+public Country (String name, String area, String pop, String gdp, String capital,
                 String flag_url){
+    this.name = name;
     this.area = area;
     this.pop = pop;
     this.gdp = gdp;
     this.capital = capital;
-    this.primary_language = primary_language;
     this.flag_url = flag_url;
-    this.name = name;
+
 
 }
+
+    public Country (String name){
+        this.name = name;
+        area = "1000";
+        pop = "4000";
+        gdp = "44122";
+        capital = "abcd";
+        flag_url = "sfasf.com/rs.jpg";
+    }
 
 
 
