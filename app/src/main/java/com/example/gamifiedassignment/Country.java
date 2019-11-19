@@ -54,6 +54,11 @@ public Country (String name, String area, String pop, String gdp, String capital
 
     public Country (String name){
         this.name = name;
+        area = "1000";
+        pop = "4000";
+        gdp = "44122";
+        capital = "abcd";
+        flag_url = "sfasf.com/rs.jpg";
     }
 
 

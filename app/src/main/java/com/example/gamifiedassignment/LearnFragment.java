@@ -17,11 +17,14 @@ public class LearnFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_learn, container, false);
 
+        final LearnAdapter learnAdapter = new LearnAdapter();
+
         recyclerView = view.findViewById(R.id.rv_learn);
         layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        LearnAdapter countryAdapter = new LearnAdapter(MainActivity.getAllCountries());
+        LearnAdapter countryAdapter = new LearnAdapter();
+        countryAdapter.setData(FakeCountryData.getAllCountries());
         recyclerView.setAdapter(countryAdapter);
         return view;
     }
