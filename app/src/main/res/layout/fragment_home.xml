@@ -2,6 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9C27B0">
+    android:background="#9C27B0"
+    android:orientation="vertical"
+    >
 
+    <EditText
+        android:id="@+id/notesText"
+        android:layout_width="397dp"
+        android:layout_height="471dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="Please replace this field with some notes \n
+Maybe there's some key point you want to jot down? \n
+Or want to make a note of something that you keep forgetting? \n
+Press save when you're done! \n
+" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:onClick="saveClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Save Notes" />
 </LinearLayout>
