@@ -7,6 +7,7 @@ private String area;
 private String pop;
 private String gdp;
 private String capital;
+private String desc;
     private String primary_language;
     private String flag_url;
 
@@ -40,13 +41,15 @@ private String capital;
 
 
 
-public Country (String name, String area, String pop, String gdp, String capital,
+public Country (String name, String area, String pop, String gdp, String capital, String primary_language, String desc,
                 String flag_url){
     this.name = name;
     this.area = area;
     this.pop = pop;
     this.gdp = gdp;
     this.capital = capital;
+    this.primary_language = primary_language;
+    this.desc = desc;
     this.flag_url = flag_url;
 
 
@@ -54,11 +57,6 @@ public Country (String name, String area, String pop, String gdp, String capital
 
     public Country (String name){
         this.name = name;
-        area = "1000";
-        pop = "4000";
-        gdp = "44122";
-        capital = "abcd";
-        flag_url = "sfasf.com/rs.jpg";
     }
 
 
