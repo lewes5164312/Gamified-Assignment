@@ -37,7 +37,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-    private static final String URL_DATA = "https://www.ttnsw.com.au/home/files/2014/8375293875293jkwhjkfhyhh/country.json";
+    private static final String URL_DATA = "https://www.ttnsw.com.au/home/files/2014/8375293875293jkwhjkfhyhh/countries3.json";
     private static final HashMap<Integer, Country> countryList = new HashMap<>();
 
     @Override
@@ -109,12 +109,14 @@ public class MainActivity extends AppCompatActivity {
 
                                 countryList.put(i, new Country(
                                         o.getString("name")
-                                  /*      o.getString("area"),
+                                      /*  o.getString("area"),
                                         o.getString("pop"),
                                         o.getString("gdp"),
                                         o.getString("capital"),
-                                        o.getString("flag_url") */
-                                ));
+                                        o.getString("primary_language"),
+                                        o.getString("desc"),
+                                        o.getString("flag_url")
+                               */ ));
 
 
                             }
