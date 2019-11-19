@@ -30,6 +30,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final String URL_DATA = "https://www.ttnsw.com.au/home/files/2014/8375293875293jkwhjkfhyhh/country.json";
-    public static ArrayList<Country> countryList;
+    private static final HashMap<Integer, Country> countryList = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,17 +107,16 @@ public class MainActivity extends AppCompatActivity {
                             for (int i = 0; i < array.length(); i++) {
                                 JSONObject o = array.getJSONObject(i);
 
-                                Country country = new Country(
+                                countryList.put(i, new Country(
                                         o.getString("name")
-                                     /*   o.getString("area"),
+                                  /*      o.getString("area"),
                                         o.getString("pop"),
                                         o.getString("gdp"),
                                         o.getString("capital"),
                                         o.getString("flag_url") */
-                                        // add to a list
-                                );
-                                countryList.add(country);
-                                System.out.println("added");
+                                ));
+
+
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -135,5 +135,8 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+    public static ArrayList<Country> getAllCountries() {
+        return new ArrayList<Country>((List) Arrays.asList(countryList.values().toArray()));
+    }
 
 }
