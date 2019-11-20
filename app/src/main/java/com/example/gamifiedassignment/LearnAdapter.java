@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.squareup.picasso.Picasso;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ItemViewHold
     }
 
     public void setData(ArrayList<Country> countriesToAdapt) {
-       this.countriesToAdapt = countriesToAdapt;
+        this.countriesToAdapt = countriesToAdapt;
 
     }
 
@@ -44,7 +44,7 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ItemViewHold
 
     //passes country and navigates detail activity
     @Override
-     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         final Country countryAtPosition = countriesToAdapt.get(position);
 
         holder.nameTV.setText(countryAtPosition.getName());
@@ -76,8 +76,18 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ItemViewHold
             view = v.findViewById(R.id.country_view);
             nameTV = v.findViewById(R.id.country_text);
             imageIV = v.findViewById(R.id.country_image);
-        }
 
+            // display image
+            //Picasso.with(v.getContext())
+            //        .load(Country.getFlag_url())
+            //        .into((ImageView) imageIV);
+
+            // display image
+            Picasso.with(v.getContext())
+                    .load("https://www.ttnsw.com.au/home/files/2014/8375293875293jkwhjkfhyhh/australia.png")
+                    .into((ImageView) imageIV);
+
+        }
 
     }
 }
