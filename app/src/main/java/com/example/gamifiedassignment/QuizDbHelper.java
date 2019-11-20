@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
-import com.example.gamifiedassignment.QuizContract;
 
 
 
@@ -56,18 +55,33 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question q1 = new Question("What is the population of Australia?", "25,523,400", "4,942,420",
                 "10,768,477", "11,420,163", 1);
         addQuestion(q1);
-        Question q2 = new Question("What is the capital of New Zealand", "Canberra", "Wellington",
+        Question q2 = new Question("What is the capital of New Zealand?", "Canberra", "Wellington",
                 "Paris", "Rome",2);
         addQuestion(q2);
-        Question q3 = new Question("What is the GDP of Luxembourg", "324", "3,061",
+        Question q3 = new Question("What is the GDP of Luxembourg?", "324", "3,061",
                 "71","199", 3);
         addQuestion(q3);
-        Question q4 = new Question("What are the primary languages of Switzerland", "German, French, Italian, Romansh",
+        Question q4 = new Question("What are the primary languages of Switzerland?", "German, French, Italian, Romansh",
                 "Dutch, French, German","French","German", 1);
         addQuestion(q4);
-        Question q5 = new Question("What is the capital of Belgium", "Brussel Sprouts",
+        Question q5 = new Question("What is the capital of Belgium?", "Brussel Sprouts",
                 "Brussels", "Bern","Berlin", 2);
         addQuestion(q5);
+        Question q6 = new Question("What is the largest country in Oceania?", "New Zealand",
+                "France", "Germany","Australia", 4);
+        addQuestion(q6);
+        Question q7 = new Question("What has the capital of Bern?", "Luxembourg",
+                "Belgium", "Lady Gaga I was bern this way","Switzerland", 4);
+        addQuestion(q7);
+        Question q8 = new Question("Because of its remoteness, what was the last lands to be settled by humans?", "Australia",
+                "New Zealand", "Wakanda","Belgium", 2);
+        addQuestion(q8);
+        Question q9 = new Question("What is population of France?", "67,022,000",
+                "60,359,546", "10,768,477","25,523,400", 1);
+        addQuestion(q9);
+        Question q10 = new Question("What country is also know as the Hellenic Republic or the Hellas", "Hell",
+                "Heaven", "Greece","Italy", 3);
+        addQuestion(q10);
     }
 
 
