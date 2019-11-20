@@ -12,12 +12,6 @@ import java.util.List;
 
 @Dao
 public interface NoteDao {
-    // Data Access Object for books.
-    // Here I define all my methods that you are allowed to use to access the books table in the
-    // database.
-    //
-    // The methods are annotated with @Query("SQL code"), essentially saying whenever this method
-    // is called, run this SQL query and return the results.
 
     @Query("SELECT * FROM note")
     List<Note> getAll();

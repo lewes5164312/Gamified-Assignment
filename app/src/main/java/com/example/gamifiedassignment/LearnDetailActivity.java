@@ -42,9 +42,12 @@ public class LearnDetailActivity extends AppCompatActivity {
         descTV = findViewById(R.id.country_desc_tv);
         imageIV = findViewById(R.id.country_image_iv);
 
+        //set imageview
+
         String imageURL = "https://www.ttnsw.com.au/home/files/2014/8375293875293jkwhjkfhyhh/" + country.getFlag_url();
         Glide.with(this).load(imageURL).into(imageIV);
 
+        //set textviews
         nameTV.setText(country.getName());
         areaTV.setText(country.getArea() + " km2");
         popTV.setText(country.getPop());

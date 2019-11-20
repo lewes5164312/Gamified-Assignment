@@ -30,17 +30,17 @@ public class HomeFragment extends Fragment {
         notesText = view.findViewById(R.id.notesText);
 
         List<Note> dball = appDatabase.noteDao().getAll();
-
+        //only insert the default note into table if there are no existing notes in DB
         if (dball.isEmpty())
         appDatabase.noteDao().insertDefault();
 
+        //set text from DB
         notesText.setText(appDatabase.noteDao().getDBText());
 
-
+        //update note text
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String notetext = "" + notesText.getText();
                 appDatabase.noteDao().updateDB(notetext);
             }
