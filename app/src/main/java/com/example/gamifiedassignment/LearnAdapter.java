@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +54,7 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ItemViewHold
             public void onClick(View view) {
                 Context context = view.getContext();
                 Intent intent = new Intent(context, LearnDetailActivity.class);
-                intent.putExtra("CountryName", countryAtPosition.getName());
+                intent.putExtra("CountryID", countryAtPosition.getId());
                 context.startActivity(intent);
             }
         });

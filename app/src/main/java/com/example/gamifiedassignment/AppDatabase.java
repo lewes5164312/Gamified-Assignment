@@ -38,6 +38,7 @@ public abstract class AppDatabase extends RoomDatabase {
                     //     line is necessary for the app to work.
                     //     This line will basically allow the database
                     //     queries to freeze the app.
+                    // yikerinis
                     .build();
         }
         return instance;
