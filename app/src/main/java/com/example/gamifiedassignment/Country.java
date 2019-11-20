@@ -2,14 +2,24 @@ package com.example.gamifiedassignment;
 
 public class Country {
 
+    private Integer id;
     private String name;
 private String area;
 private String pop;
 private String gdp;
 private String capital;
-private String desc;
+
+    public String getDesc() {
+        return desc;
+    }
+
+    private String desc;
     private String primary_language;
     private String flag_url;
+
+    public Integer getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -41,8 +51,9 @@ private String desc;
 
 
 
-public Country (String name, String area, String pop, String gdp, String capital, String primary_language, String desc,
+public Country (Integer id, String name, String area, String pop, String gdp, String capital, String primary_language, String desc,
                 String flag_url){
+        this.id=id;
     this.name = name;
     this.area = area;
     this.pop = pop;
