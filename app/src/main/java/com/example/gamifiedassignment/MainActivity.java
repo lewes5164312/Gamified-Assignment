@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        loadRecyclerViewData();
+       loadRecyclerViewData();
 
 
         HomeFragment fragment = new HomeFragment();
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
     }
 
     //Swapfragment method From NYT demo
@@ -107,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
                                 JSONObject o = array.getJSONObject(i);
 
                                 countryList.put(i, new Country(
-                                        i,
                                         o.getString("name"),
                                         o.getString("area"),
                                         o.getString("pop"),
@@ -141,9 +141,4 @@ public class MainActivity extends AppCompatActivity {
         return new ArrayList<Country>((List) Arrays.asList(countryList.values().toArray()));
     }
 
-    public static Country getCountryById(int itemID) {
-        return countryList.get(itemID);
-    }
-
-    }
-
+}
