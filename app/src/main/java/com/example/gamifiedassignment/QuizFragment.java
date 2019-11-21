@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -26,6 +27,7 @@ public class QuizFragment extends Fragment {
     private static final int REQUEST_CODE_QUIZ = 1;
 
     private TextView textViewHighscore;
+    private TextView textViewProgress;
     private int highscore;
     private String highscoreString;
 
@@ -61,6 +63,25 @@ public class QuizFragment extends Fragment {
             appDatabase.noteDao().insertDefaultHighScore();
         }
 
+        //setting progress bar through highscore divided by number of questions, expressed as a percent
+        ProgressBar progressBar=(ProgressBar)view.findViewById(R.id.progressBar);
+
+        highscoreString = appDatabase.noteDao().getDBHighscore();
+
+        QuizDbHelper dbHelper = new QuizDbHelper(getActivity());
+        List<Question> questionList = dbHelper.getAllQuestions();
+        int questionCountTotal = questionList.size();
+
+
+        highscore = Integer.parseInt(highscoreString);
+
+        int progressPercent = highscore*100/questionCountTotal;
+
+        progressBar.setProgress(progressPercent);
+        //setting progress textview
+        textViewProgress = view.findViewById(R.id.text_view_progress);
+
+        textViewProgress.setText("Progress: " + progressPercent + "% Complete");
         return view;
     }
 
@@ -101,7 +122,5 @@ highscoreString = appDatabase.noteDao().getDBHighscore();;
         textViewHighscore.setText("Highscore: " + highscore);
         appDatabase.noteDao().updateDBHighscore(highscoreString);
     }
-
-
 
 }

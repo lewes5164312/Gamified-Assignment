@@ -88,6 +88,7 @@ public class QuizActivity extends AppCompatActivity {
 
 
         //Initialise and fill the questions from the database
+
         QuizDbHelper dbHelper = new QuizDbHelper(this);
         questionList = dbHelper.getAllQuestions();
         questionCountTotal = questionList.size();
