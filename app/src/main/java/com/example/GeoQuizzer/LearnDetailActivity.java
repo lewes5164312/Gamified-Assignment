@@ -34,12 +34,12 @@ public class LearnDetailActivity extends AppCompatActivity {
 
         nameTV = findViewById(R.id.country_name_tv);
         continentTV = findViewById(R.id.continent_tv);
-        areaTV = findViewById(R.id.country_area_tv);
-        popTV = findViewById(R.id.country_pop_tv);
-        gdpTV = findViewById(R.id.country_gdp_tv);
-        capitalTV = findViewById(R.id.country_capital_tv);
-        languageTV = findViewById(R.id.country_language_tv);
-        descTV = findViewById(R.id.country_desc_tv);
+        areaTV = findViewById(R.id.area_tv);
+        popTV = findViewById(R.id.pop_tv);
+        gdpTV = findViewById(R.id.gdp_tv);
+        capitalTV = findViewById(R.id.capital_tv);
+        languageTV = findViewById(R.id.language_tv);
+        descTV = findViewById(R.id.desc_tv);
         imageIV = findViewById(R.id.country_image_iv);
 
         //set imageview
