@@ -59,6 +59,15 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ItemViewHold
             }
         });
 
+        //display image
+
+        String imageURL = "https://www.ttnsw.com.au/home/files/2014/8375293875293jkwhjkfhyhh/" + countryAtPosition.getFlag_url();
+
+        Picasso.with(holder.view.getContext())
+                .load(imageURL)
+                .into((ImageView) holder.imageIV);
+
+
     }
 
     @Override
@@ -77,15 +86,9 @@ public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ItemViewHold
             nameTV = v.findViewById(R.id.country_text);
             imageIV = v.findViewById(R.id.country_image);
 
-            // display image
-            //Picasso.with(v.getContext())
-            //        .load(Country.getFlag_url())
-            //        .into((ImageView) imageIV);
 
-            // display image
-            Picasso.with(v.getContext())
-                    .load("https://www.ttnsw.com.au/home/files/2014/8375293875293jkwhjkfhyhh/australia.png")
-                    .into((ImageView) imageIV);
+
+
 
         }
 
