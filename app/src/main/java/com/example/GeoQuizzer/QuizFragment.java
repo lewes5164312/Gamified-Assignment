@@ -28,7 +28,7 @@ public class QuizFragment extends Fragment {
     private TextView textViewProgress;
     private int highscore;
     private String highscoreString;
-
+    private ProgressBar progressBar;
     final AppDatabase appDatabase = AppDatabase.getInstance(getContext());
 
     public QuizFragment(){
@@ -62,7 +62,7 @@ public class QuizFragment extends Fragment {
         }
 
         //setting progress bar through highscore divided by number of questions, expressed as a percent
-        ProgressBar progressBar=(ProgressBar)view.findViewById(R.id.progressBar);
+        progressBar=(ProgressBar)view.findViewById(R.id.progressBar);
 
         highscoreString = appDatabase.noteDao().getDBHighscore();
 
@@ -119,6 +119,16 @@ highscoreString = appDatabase.noteDao().getDBHighscore();;
         highscoreString = String.valueOf(highscore);
         textViewHighscore.setText("Highscore: " + highscore);
         appDatabase.noteDao().updateDBHighscore(highscoreString);
+
+        QuizDbHelper dbHelper = new QuizDbHelper(getActivity());
+        List<Question> questionList = dbHelper.getAllQuestions();
+        int questionCountTotal = questionList.size();
+
+        int progressPercent = highscore*100/questionCountTotal;
+
+        progressBar.setProgress(progressPercent);
+
+        textViewProgress.setText("Progress: " + progressPercent + "% Complete");
     }
 
 }

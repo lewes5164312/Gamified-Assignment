@@ -13,10 +13,10 @@ public interface NoteDao {
     List<Note> getAll();
 
     //set default text for note
-    @Query("INSERT into note VALUES (1, 'Please replace this field with some notes \n " +
-            "Maybe there is some key point you want to jot down? \n " +
-            "Or want to make a note of something that you keep forgetting? \n " +
-            "Press save when you are done! \n " +
+    @Query("INSERT into note VALUES (1, 'Please replace this field with some notes\n" +
+            "Maybe there is some key point you want to jot down?\n" +
+            "Or want to make a note of something that you keep forgetting?\n" +
+            "Press save when you are done!\n" +
             "Your work will still be here next time you open, thanks to the room library/sqlite database!')")
     void insertDefault();
 
