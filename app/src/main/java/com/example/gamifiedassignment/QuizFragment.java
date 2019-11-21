@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.List;
+
 import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
 
@@ -51,6 +53,14 @@ public class QuizFragment extends Fragment {
                 startQuiz();
             }
         });
+
+        List<Note> dball = appDatabase.noteDao().getAll();
+        //only insert the default note/highscore into table if there not existing in DB ie the first time it is run
+        if (dball.isEmpty()) {
+            appDatabase.noteDao().insertDefault();
+            appDatabase.noteDao().insertDefaultHighScore();
+        }
+
         return view;
     }
 

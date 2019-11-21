@@ -5,15 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -47,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         loadRecyclerViewData();
 
         //set default fragment
-        HomeFragment fragment = new HomeFragment();
+        NoteFragment fragment = new NoteFragment();
         final FragmentManager fragmentManager = getSupportFragmentManager();
         final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frag_slot, fragment);
@@ -60,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 if (menuItem.getItemId() == R.id.nav_home) {
-                    Fragment fragment = new HomeFragment();
+                    Fragment fragment = new NoteFragment();
                     swapFragment(fragment);
                     return true;
                 } else if (menuItem.getItemId() == R.id.nav_learn) {
