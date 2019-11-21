@@ -30,10 +30,11 @@ public class HomeFragment extends Fragment {
         notesText = view.findViewById(R.id.notesText);
 
         List<Note> dball = appDatabase.noteDao().getAll();
-        //only insert the default note into table if there are no existing notes in DB
-        if (dball.isEmpty())
-        appDatabase.noteDao().insertDefault();
-
+        //only insert the default note/highscore into table if there not existing in DB ie the first time it is run
+        if (dball.isEmpty()) {
+            appDatabase.noteDao().insertDefault();
+            appDatabase.noteDao().insertDefaultHighScore();
+        }
         //set text from DB
         notesText.setText(appDatabase.noteDao().getDBText());
 

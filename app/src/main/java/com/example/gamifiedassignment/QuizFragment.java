@@ -22,12 +22,12 @@ public class QuizFragment extends Fragment {
 
     //Storing the highscore
     private static final int REQUEST_CODE_QUIZ = 1;
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String KEY_HIGHSCORE = "keyHighscore";
 
     private TextView textViewHighscore;
     private int highscore;
+    private String highscoreString;
 
+    final AppDatabase appDatabase = AppDatabase.getInstance(getContext());
 
     public QuizFragment(){
     //Required Empty Constructor
@@ -71,6 +71,7 @@ public class QuizFragment extends Fragment {
             if (resultCode == RESULT_OK){
                 //Store the score in a new integer
                 int score = data.getIntExtra(QuizActivity.EXTRA_SCORE, 0 );
+                highscore = Integer.parseInt(highscoreString);
                 if (score > highscore){
                     updateHighscore(score);
                 }
@@ -80,19 +81,15 @@ public class QuizFragment extends Fragment {
 
     //Shows highscore
     private void loadHighscore() {
-        SharedPreferences prefs = this.getActivity().getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        highscore = prefs.getInt(KEY_HIGHSCORE, 0);
-        textViewHighscore.setText("Highscore: " + highscore);
+highscoreString = appDatabase.noteDao().getDBHighscore();;
+        textViewHighscore.setText("Highscore: " + highscoreString);
     }
     //Updates highscores
     private void updateHighscore(int highscoreNew) {
         highscore = highscoreNew;
+        highscoreString = String.valueOf(highscore);
         textViewHighscore.setText("Highscore: " + highscore);
-
-        SharedPreferences prefs = this.getActivity().getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putInt(KEY_HIGHSCORE, highscore);
-        editor.apply();
+        appDatabase.noteDao().updateDBHighscore(highscoreString);
     }
 
 
