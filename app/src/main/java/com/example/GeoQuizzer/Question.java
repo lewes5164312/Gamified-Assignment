@@ -1,4 +1,4 @@
-package com.example.gamifiedassignment;
+package com.example.GeoQuizzer;
 
 
 //To store in our database

@@ -1,12 +1,10 @@
-package com.example.gamifiedassignment;
+package com.example.GeoQuizzer;
 
 import android.content.Context;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-
-import com.example.gamifiedassignment.Note;
 
 
 //based on INFS3634 Week 8 class

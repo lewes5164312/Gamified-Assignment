@@ -1,4 +1,4 @@
-package com.example.gamifiedassignment;
+package com.example.GeoQuizzer;
 
 import android.provider.BaseColumns;
 

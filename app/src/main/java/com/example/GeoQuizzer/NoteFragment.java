@@ -1,4 +1,4 @@
-package com.example.gamifiedassignment;
+package com.example.GeoQuizzer;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,8 +10,6 @@ import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 public class NoteFragment extends Fragment {

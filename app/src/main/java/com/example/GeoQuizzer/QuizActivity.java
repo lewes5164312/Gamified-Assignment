@@ -1,4 +1,4 @@
-package com.example.gamifiedassignment;
+package com.example.GeoQuizzer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,8 +13,6 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Toast;
 import android.graphics.Color;;
-import android.widget.TextView;
-import android.widget.Toast;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;

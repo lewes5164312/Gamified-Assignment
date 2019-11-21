@@ -1,4 +1,4 @@
-package com.example.gamifiedassignment;
+package com.example.GeoQuizzer;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,10 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
-import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LearnAdapter extends RecyclerView.Adapter<LearnAdapter.ItemViewHolder> {
     private ArrayList<Country> countriesToAdapt;
