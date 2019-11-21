@@ -20,6 +20,7 @@ public class LearnDetailActivity extends AppCompatActivity {
     private TextView capitalTV;
     private TextView languageTV;
     private TextView descTV;
+    private TextView continentTV;
     private ImageView imageIV;
 
     @Override
@@ -34,6 +35,7 @@ public class LearnDetailActivity extends AppCompatActivity {
         Country country = MainActivity.getCountryById(countryID);
 
         nameTV = findViewById(R.id.country_name_tv);
+        continentTV = findViewById(R.id.continent_tv);
         areaTV = findViewById(R.id.country_area_tv);
         popTV = findViewById(R.id.country_pop_tv);
         gdpTV = findViewById(R.id.country_gdp_tv);
@@ -55,5 +57,6 @@ public class LearnDetailActivity extends AppCompatActivity {
         capitalTV.setText(country.getCapital());
         languageTV.setText(country.getPrimary_language());
         descTV.setText(country.getDesc());
+        continentTV.setText(country.getContinent());
     }
 }

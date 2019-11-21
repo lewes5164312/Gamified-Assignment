@@ -4,6 +4,7 @@ public class Country {
 
     private Integer id;
     private String name;
+    private String continent;
 private String area;
 private String pop;
 private String gdp;
@@ -23,6 +24,10 @@ private String capital;
 
     public String getName() {
         return name;
+    }
+
+    public String getContinent() {
+        return continent;
     }
 
     public String getArea() {
@@ -51,10 +56,11 @@ private String capital;
 
 
 
-public Country (Integer id, String name, String area, String pop, String gdp, String capital, String primary_language, String desc,
+public Country (Integer id, String name, String continent, String area, String pop, String gdp, String capital, String primary_language, String desc,
                 String flag_url){
         this.id=id;
     this.name = name;
+    this.continent = continent;
     this.area = area;
     this.pop = pop;
     this.gdp = gdp;

@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                                 countryList.put(i, new Country(
                                         i,
                                         o.getString("name"),
+                                        o.getString("continent"),
                                         o.getString("area"),
                                         o.getString("pop"),
                                         o.getString("gdp"),
