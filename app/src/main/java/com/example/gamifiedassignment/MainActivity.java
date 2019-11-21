@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     //Swapfragment method From NYT demo
