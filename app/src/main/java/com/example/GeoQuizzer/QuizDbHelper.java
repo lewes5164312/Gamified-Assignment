@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+//this references https://codinginflow.com/tutorials/android/quiz-app-with-sqlite/part-3-sqliteopenhelper
 public class QuizDbHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "MyAwesomeQuiz.db";
+    private static final String DATABASE_NAME = "GeographyQuiz.db";
     private static final int DATABASE_VERSION = 1;
 
     //Holds reference to the database
@@ -70,7 +70,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question q6 = new Question("What is the largest country in Oceania?", "New Zealand",
                 "France", "Germany","Australia", 4);
         addQuestion(q6);
-        Question q7 = new Question("What has the capital of Bern?", "Luxembourg",
+        Question q7 = new Question("What is the country that has the capital of Bern?", "Luxembourg",
                 "Belgium", "Lady Gaga I was bern this way","Switzerland", 4);
         addQuestion(q7);
         Question q8 = new Question("Because of its remoteness, what was the last lands to be settled by humans?", "Australia",
