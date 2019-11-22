@@ -11,14 +11,14 @@
         android:id="@+id/frag_slot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="80dp">
+        android:layout_marginBottom="60dp">
 
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

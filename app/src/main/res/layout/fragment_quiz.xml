@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:textStyle="italic"
-        android:text="Quiz time! How well do you know your geogrphy?"
+        android:text="Quiz time! How well do you know your geography?"
         android:textColor="@android:color/white"
         android:textSize="30dp" />
 
