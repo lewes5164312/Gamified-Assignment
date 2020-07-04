@@ -31,9 +31,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     private static final String URL_DATA = "https://www.ttnsw.com.au/home/files/2014/8375293875293jkwhjkfhyhh/countries3.json";
-
-    //hashmap used to allow for easy retrival of a key CountryID when passing intents
     private static final HashMap<Integer, Country> countryList = new HashMap<>();
 
     @Override
